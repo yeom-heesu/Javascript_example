@@ -56,4 +56,20 @@ const print = function print(){
     console.log('print');
 }
 
-//2. call
+//2. callback function using function expression
+function randomQuiz(answer,printYes,printNo){
+    if (answer === 'love you'){
+        printYes();
+    }else{
+        printNo();
+    }
+}
+const printYes = function (){
+    console.log('yes!');
+};
+const printNo = function print(){
+    console.log('no!');
+};
+
+randomQuiz('wrong',printYes,printNo);
+randomQuiz('love you',printYes,printNo);
