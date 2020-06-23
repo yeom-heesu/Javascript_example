@@ -51,10 +51,10 @@ function upgradeUser(user){
         //조건에 해당하지 않는경우 빨리 종료함
     }
 }
-
+//anonymous function
 const print = function print(){
     console.log('print');
-}
+};
 
 //2. callback function using function expression
 function randomQuiz(answer,printYes,printNo){
@@ -63,7 +63,7 @@ function randomQuiz(answer,printYes,printNo){
     }else{
         printNo();
     }
-}
+};
 const printYes = function (){
     console.log('yes!');
 };
@@ -73,3 +73,14 @@ const printNo = function print(){
 
 randomQuiz('wrong',printYes,printNo);
 randomQuiz('love you',printYes,printNo);
+
+// named function
+// 디버거시 편리하다.
+// 반복호출 가능
+const printNo = function print()
+{
+    console.log('no!');
+    print();
+};
+const simplePrint = () => console.log('simplePrint!');
+const add = (a,b) = > a + b;
